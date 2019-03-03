@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <RootNamespace>BrowsCapTest</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Shared\BrowsCapTestCore.cs" Link="Shared\BrowsCapTestCore.cs" />
+    <Compile Include="..\Shared\BrowscapXmlHelper.cs" Link="Shared\BrowscapXmlHelper.cs" />
+    <Compile Include="..\Shared\NewBrowscapXmlHelper.cs" Link="Shared\NewBrowscapXmlHelper.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Shared\" />
+  </ItemGroup>
+
+</Project>

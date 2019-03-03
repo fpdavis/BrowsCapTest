@@ -1,0 +1,7 @@
+C:\Users\pdavis.UMPH\Documents\Visual Studio 2017\Projects\BrowsCapTest\BrowsCapTest - Framework\obj\Release\BrowsCapTest - Framework.csprojResolveAssemblyReference.cache
+C:\Users\pdavis.UMPH\Documents\Visual Studio 2017\Projects\BrowsCapTest\BrowsCapTest - Framework\obj\Release\BrowsCapTest - Framework.csproj.CoreCompileInputs.cache
+C:\Users\pdavis.UMPH\Documents\Visual Studio 2017\Projects\BrowsCapTest\BrowsCapTest - Framework\bin\Release\BrowsCapTest - Framework.exe.config
+C:\Users\pdavis.UMPH\Documents\Visual Studio 2017\Projects\BrowsCapTest\BrowsCapTest - Framework\bin\Release\BrowsCapTest - Framework.exe
+C:\Users\pdavis.UMPH\Documents\Visual Studio 2017\Projects\BrowsCapTest\BrowsCapTest - Framework\bin\Release\BrowsCapTest - Framework.pdb
+C:\Users\pdavis.UMPH\Documents\Visual Studio 2017\Projects\BrowsCapTest\BrowsCapTest - Framework\obj\Release\BrowsCapTest - Framework.exe
+C:\Users\pdavis.UMPH\Documents\Visual Studio 2017\Projects\BrowsCapTest\BrowsCapTest - Framework\obj\Release\BrowsCapTest - Framework.pdb

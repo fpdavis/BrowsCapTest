@@ -1,0 +1,4 @@
+c:\users\pdavis.umph\documents\visual studio 2017\Projects\BrowsCapTest\obj\Release\netcoreapp1.1\BrowsCapTest.csprojResolveAssemblyReference.cache
+c:\users\pdavis.umph\documents\visual studio 2017\Projects\BrowsCapTest\obj\Release\netcoreapp1.1\BrowsCapTest.csproj.CoreCompileInputs.cache
+c:\users\pdavis.umph\documents\visual studio 2017\Projects\BrowsCapTest\obj\Release\netcoreapp1.1\BrowsCapTest.AssemblyInfoInputs.cache
+c:\users\pdavis.umph\documents\visual studio 2017\Projects\BrowsCapTest\obj\Release\netcoreapp1.1\BrowsCapTest.AssemblyInfo.cs

@@ -1,0 +1,11 @@
+c:\users\pdavis.umph\documents\visual studio 2017\Projects\BrowsCapTest\bin\Release\netcoreapp2.0\BrowsCapTest.deps.json
+c:\users\pdavis.umph\documents\visual studio 2017\Projects\BrowsCapTest\bin\Release\netcoreapp2.0\BrowsCapTest.runtimeconfig.json
+c:\users\pdavis.umph\documents\visual studio 2017\Projects\BrowsCapTest\bin\Release\netcoreapp2.0\BrowsCapTest.runtimeconfig.dev.json
+c:\users\pdavis.umph\documents\visual studio 2017\Projects\BrowsCapTest\bin\Release\netcoreapp2.0\BrowsCapTest.dll
+c:\users\pdavis.umph\documents\visual studio 2017\Projects\BrowsCapTest\bin\Release\netcoreapp2.0\BrowsCapTest.pdb
+c:\users\pdavis.umph\documents\visual studio 2017\Projects\BrowsCapTest\obj\Release\netcoreapp2.0\BrowsCapTest.csprojResolveAssemblyReference.cache
+c:\users\pdavis.umph\documents\visual studio 2017\Projects\BrowsCapTest\obj\Release\netcoreapp2.0\BrowsCapTest.csproj.CoreCompileInputs.cache
+c:\users\pdavis.umph\documents\visual studio 2017\Projects\BrowsCapTest\obj\Release\netcoreapp2.0\BrowsCapTest.AssemblyInfoInputs.cache
+c:\users\pdavis.umph\documents\visual studio 2017\Projects\BrowsCapTest\obj\Release\netcoreapp2.0\BrowsCapTest.AssemblyInfo.cs
+c:\users\pdavis.umph\documents\visual studio 2017\Projects\BrowsCapTest\obj\Release\netcoreapp2.0\BrowsCapTest.dll
+c:\users\pdavis.umph\documents\visual studio 2017\Projects\BrowsCapTest\obj\Release\netcoreapp2.0\BrowsCapTest.pdb
