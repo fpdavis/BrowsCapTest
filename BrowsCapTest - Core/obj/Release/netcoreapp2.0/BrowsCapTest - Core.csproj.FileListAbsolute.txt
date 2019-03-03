@@ -9,3 +9,14 @@ C:\Users\pdavis.UMPH\Documents\Visual Studio 2017\Projects\BrowsCapTest\BrowsCap
 C:\Users\pdavis.UMPH\Documents\Visual Studio 2017\Projects\BrowsCapTest\BrowsCapTest - Core\bin\Release\netcoreapp2.0\BrowsCapTest - Core.pdb
 C:\Users\pdavis.UMPH\Documents\Visual Studio 2017\Projects\BrowsCapTest\BrowsCapTest - Core\obj\Release\netcoreapp2.0\BrowsCapTest - Core.dll
 C:\Users\pdavis.UMPH\Documents\Visual Studio 2017\Projects\BrowsCapTest\BrowsCapTest - Core\obj\Release\netcoreapp2.0\BrowsCapTest - Core.pdb
+C:\Users\pdavis.UMPH\SyncDrive\Data\Source\BrowsCapTest\BrowsCapTest - Core\bin\Release\netcoreapp2.0\BrowsCapTest - Core.deps.json
+C:\Users\pdavis.UMPH\SyncDrive\Data\Source\BrowsCapTest\BrowsCapTest - Core\bin\Release\netcoreapp2.0\BrowsCapTest - Core.runtimeconfig.json
+C:\Users\pdavis.UMPH\SyncDrive\Data\Source\BrowsCapTest\BrowsCapTest - Core\bin\Release\netcoreapp2.0\BrowsCapTest - Core.runtimeconfig.dev.json
+C:\Users\pdavis.UMPH\SyncDrive\Data\Source\BrowsCapTest\BrowsCapTest - Core\bin\Release\netcoreapp2.0\BrowsCapTest - Core.dll
+C:\Users\pdavis.UMPH\SyncDrive\Data\Source\BrowsCapTest\BrowsCapTest - Core\bin\Release\netcoreapp2.0\BrowsCapTest - Core.pdb
+C:\Users\pdavis.UMPH\SyncDrive\Data\Source\BrowsCapTest\BrowsCapTest - Core\obj\Release\netcoreapp2.0\BrowsCapTest - Core.csprojResolveAssemblyReference.cache
+C:\Users\pdavis.UMPH\SyncDrive\Data\Source\BrowsCapTest\BrowsCapTest - Core\obj\Release\netcoreapp2.0\BrowsCapTest - Core.csproj.CoreCompileInputs.cache
+C:\Users\pdavis.UMPH\SyncDrive\Data\Source\BrowsCapTest\BrowsCapTest - Core\obj\Release\netcoreapp2.0\BrowsCapTest - Core.AssemblyInfoInputs.cache
+C:\Users\pdavis.UMPH\SyncDrive\Data\Source\BrowsCapTest\BrowsCapTest - Core\obj\Release\netcoreapp2.0\BrowsCapTest - Core.AssemblyInfo.cs
+C:\Users\pdavis.UMPH\SyncDrive\Data\Source\BrowsCapTest\BrowsCapTest - Core\obj\Release\netcoreapp2.0\BrowsCapTest - Core.dll
+C:\Users\pdavis.UMPH\SyncDrive\Data\Source\BrowsCapTest\BrowsCapTest - Core\obj\Release\netcoreapp2.0\BrowsCapTest - Core.pdb

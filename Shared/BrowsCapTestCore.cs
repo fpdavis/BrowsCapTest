@@ -23,11 +23,18 @@ namespace BrowsCapTest
         private static NewBrowseCapTest.BrowscapXmlHelper oBrowscapXmlHelper1;
         private static NewBrowseCapTest.BrowscapXmlHelper oBrowscapXmlHelper2;
 
-        public static void Start(int iInitializationsToTest, int iNodesToTest = 10, bool bVerbose = false)
+        public static void Start(int iInitializationsToTest, int iNodesToTest = 10, int iVerbosity = 0)
         {
+            Console.WriteLine("BrowdCapTest Starting\n");
+            Console.WriteLine("Start time: " + DateTime.Now + System.Environment.NewLine);
+
+            Console.WriteLine($"Testing {iInitializationsToTest} initializations");
+            Console.WriteLine($"Testing {iNodesToTest} Random Agent Names\n");
+
             var oStopwatch = System.Diagnostics.Stopwatch.StartNew();
 
             List<XElement> agentNames = LoadAgentNames(userAgentStringsPath);
+            string sAgentName;
 
             bool isCrawlerResult;
             bool shouldBeCrawler;
@@ -55,7 +62,7 @@ namespace BrowsCapTest
 
                     dAccumulator += oStopwatch.ElapsedMilliseconds;
 
-                    if (bVerbose)
+                    if (iVerbosity > 2)
                     {
                         Console.WriteLine($"   {i} Initialization Time: {oStopwatch.ElapsedMilliseconds}ms");
                     }
@@ -63,7 +70,11 @@ namespace BrowsCapTest
 
                 decimal dAverage = dAccumulator / iNodesToTest;
                 Console.WriteLine($"   Initialization Average: {dAverage}ms");
-                Console.WriteLine($"   Total Time: {dAccumulator}ms\n");
+
+                if (iVerbosity > 1)
+                {
+                    Console.WriteLine($"   Total Time: {dAccumulator}ms\n");
+                }
 
                 #endregion Test Initialization Time
 
@@ -79,7 +90,9 @@ namespace BrowsCapTest
 
                     oStopwatch.Reset();
                     oStopwatch.Start();
-                    isCrawlerResult = RunIsCrawlerTest(iTestLoop, agentNames[iNodeToTest].Attribute("name").Value);
+
+                    sAgentName = agentNames[iNodeToTest].Attribute("name").Value.Replace("*", "");
+                    isCrawlerResult = RunIsCrawlerTest(iTestLoop, sAgentName);
                     oStopwatch.Stop();
 
                     dAccumulator += oStopwatch.ElapsedMilliseconds;
@@ -98,9 +111,15 @@ namespace BrowsCapTest
                     else
                     {
                         iIncorrectMatches++;
+
+                        if (iVerbosity > 0)
+                        {
+                            Console.WriteLine($"   {i} Incorrect Match: " + sAgentName);
+                            Console.WriteLine($"   {i} isCrawlerResult: {isCrawlerResult}");
+                        }
                     }
 
-                    if (bVerbose)
+                    if (iVerbosity > 2)
                     {
                         Console.WriteLine($"   {i} Match Node: {iNodeToTest}");
                         Console.WriteLine($"   {i} Match Time: {oStopwatch.ElapsedMilliseconds}ms");
@@ -109,13 +128,20 @@ namespace BrowsCapTest
 
                 dAverage = dAccumulator / iNodesToTest;
                 Console.WriteLine($"   isCrawler() Average: {dAverage}ms");
-                Console.WriteLine($"   Total Time: {dAccumulator}ms\n");
+
+                if (iVerbosity > 1)
+                {
+                    Console.WriteLine($"   Total Time: {dAccumulator}ms\n");
+                }
 
                 Console.WriteLine($"   Correct Matches: {iCorrectMatches}");
                 Console.WriteLine($"   Incorrect Matches: {iIncorrectMatches}\n");
 
                 #endregion Test isCrawler
             }
+
+            Console.WriteLine("End time: " + DateTime.Now);
+            Console.WriteLine($"BrowsCapTest Complete\n");
         }
 
         private static List<XElement> LoadAgentNames(string userAgentStringsPath)
