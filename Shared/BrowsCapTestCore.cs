@@ -23,17 +23,21 @@ namespace BrowsCapTest
         private static NewBrowseCapTest.BrowscapXmlHelper oBrowscapXmlHelper1;
         private static NewBrowseCapTest.BrowscapXmlHelper oBrowscapXmlHelper2;
 
-        public static void Start(int iInitializationsToTest, int iNodesToTest = 10, int iVerbosity = 0)
+        public static void Start(int iInitializationsToTest, int iNodesToTest = 10, int iVerbosity = 0, bool bRandom = true)
         {
             Console.WriteLine("BrowdCapTest Starting\n");
             Console.WriteLine("Start time: " + DateTime.Now + System.Environment.NewLine);
 
             Console.WriteLine($"Testing {iInitializationsToTest} initializations");
-            Console.WriteLine($"Testing {iNodesToTest} Random Agent Names\n");
 
             var oStopwatch = System.Diagnostics.Stopwatch.StartNew();
 
             List<XElement> agentNames = LoadAgentNames(userAgentStringsPath);
+
+            if (!bRandom && iNodesToTest > agentNames.Count) iNodesToTest = agentNames.Count;
+
+            Console.WriteLine("Testing {0} {1}Agent Names out of a possible {2}\n", iNodesToTest, bRandom ? "Random " : "", agentNames.Count);
+
             string sAgentName;
 
             bool isCrawlerResult;
@@ -45,7 +49,7 @@ namespace BrowsCapTest
             int iNodeToTest;
             Random oRandom = new Random();
 
-            for (int iTestLoop = 0; iTestLoop < 3; iTestLoop++)
+            for (int iTestLoop = 0; iTestLoop < 2; iTestLoop++)
             {
                 RunTestTitle(iTestLoop);
 
@@ -53,8 +57,10 @@ namespace BrowsCapTest
 
                 decimal dAccumulator = 0;
 
-                for (int i = 0; i < iInitializationsToTest; i++)
+                for (int i = 1; i <= iInitializationsToTest; i++)
                 {
+                    Console.Write($"\r   Initializing {i}/{iInitializationsToTest}");
+
                     oStopwatch.Reset();
                     oStopwatch.Start();
                     RunInitializationTest(iTestLoop, userAgentStringsPath, crawlerOnlyUserAgentStringsPath);
@@ -64,16 +70,17 @@ namespace BrowsCapTest
 
                     if (iVerbosity > 2)
                     {
-                        Console.WriteLine($"   {i} Initialization Time: {oStopwatch.ElapsedMilliseconds}ms");
+                        Console.WriteLine($"\r   {i} Initialization Time: {oStopwatch.ElapsedMilliseconds}ms");
                     }
                 }
 
-                decimal dAverage = dAccumulator / iNodesToTest;
+                decimal dAverage = dAccumulator / iInitializationsToTest;
+                Console.WriteLine("\r                                    ");
                 Console.WriteLine($"   Initialization Average: {dAverage}ms");
 
                 if (iVerbosity > 1)
                 {
-                    Console.WriteLine($"   Total Time: {dAccumulator}ms\n");
+                    Console.WriteLine($"\r   Total Time: {dAccumulator}ms");
                 }
 
                 #endregion Test Initialization Time
@@ -84,9 +91,18 @@ namespace BrowsCapTest
                 iIncorrectMatches = 0;
                 dAccumulator = 0;
 
-                for (int i = 0; i < iNodesToTest; i++)
+                for (int i = 1; i <= iNodesToTest; i++)
                 {
-                    iNodeToTest = oRandom.Next(0, agentNames.Count);
+                    Console.Write($"\r   Checking {i}/{iNodesToTest}");
+
+                    if (bRandom)
+                    {
+                        iNodeToTest = oRandom.Next(0, agentNames.Count);
+                    }
+                    else
+                    {
+                        iNodeToTest = agentNames.Count - i;
+                    }
 
                     oStopwatch.Reset();
                     oStopwatch.Start();
@@ -104,6 +120,12 @@ namespace BrowsCapTest
                             shouldBeCrawler = true;
                     }
 
+                    if (iVerbosity > 2)
+                    {
+                        Console.WriteLine($"\r   {i} Match Node: {iNodeToTest} - {sAgentName}");
+                        Console.WriteLine($"   {i} Match Time: {oStopwatch.ElapsedMilliseconds}ms");
+                    }
+
                     if (isCrawlerResult == shouldBeCrawler)
                     {
                         iCorrectMatches++;
@@ -114,19 +136,14 @@ namespace BrowsCapTest
 
                         if (iVerbosity > 0)
                         {
-                            Console.WriteLine($"   {i} Incorrect Match: " + sAgentName);
+                            Console.WriteLine($"\r   {i} Incorrect Match: " + sAgentName);
                             Console.WriteLine($"   {i} isCrawlerResult: {isCrawlerResult}");
                         }
-                    }
-
-                    if (iVerbosity > 2)
-                    {
-                        Console.WriteLine($"   {i} Match Node: {iNodeToTest}");
-                        Console.WriteLine($"   {i} Match Time: {oStopwatch.ElapsedMilliseconds}ms");
                     }
                 }
 
                 dAverage = dAccumulator / iNodesToTest;
+                Console.WriteLine("\r                                    ");
                 Console.WriteLine($"   isCrawler() Average: {dAverage}ms");
 
                 if (iVerbosity > 1)
@@ -161,15 +178,15 @@ namespace BrowsCapTest
             switch (iTestNumber)
             {
                 case 0:
-                    Console.WriteLine("Original 4.0\n");
+                    Console.WriteLine("Original 4.0");
                     break;
 
                 case 1:
-                    Console.WriteLine("Sam's Code, no Compilation\n");
+                    Console.WriteLine("Sam's Code, no Compilation");
                     break;
 
                 case 2:
-                    Console.WriteLine("Sam's Code, with Compilation\n");
+                    Console.WriteLine("Sam's Code, with Compilation");
                     break;
             }
         }
